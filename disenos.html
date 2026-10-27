@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros Diseños - Kit Escolar | Juntos hacemos País</title>
+  <meta name="description" content="Conoce nuestros diseños de morrales escolares confeccionados por madres artesanas colombianas: Villavicencio, Pereira y Bucaramanga. Apoya con tu donación.">
+  
+  <!-- Tipografía Google: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       VARIABLES Y PALETA DE COLOR OFICIAL (DESIGN.md)
+       ========================================================================== */
+    :root {
+      --primary: #D81B60;          /* Rosa/fucsia principal de marca y botones */
+      --primary-hover: #b0144d;    /* Rosa oscuro para hover/focus */
+      --primary-active: #8e0e3c;
+      --primary-light: #F8E8EE;    /* Rosa claro de fondos y detalles */
+      --terracotta: #A66A50;       /* Terracota / marrón artesanal */
+      --terracotta-dark: #824f3b;
+      --bg-cream: #F8F3E9;         /* Fondo cálido de secciones */
+      --bg-sand: #E5C18F;          /* Fondo de sección destacada / arena */
+      --bg-sand-light: #f3dfc4;
+      --text-main: #171717;        /* Texto principal (negro suave) */
+      --text-muted: #555555;       /* Texto secundario (gris oscuro) */
+      --surface: #FFFFFF;          /* Superficies y tarjetas (blanco) */
+      --border: #E5E1DE;           /* Bordes y separadores (gris claro) */
+      --border-focus: #D81B60;
+      --success: #2E7D32;
+      --success-light: #E8F5E9;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.10);
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      color: var(--text-main);
+      background-color: #FFFFFF;
+      font-family: var(--font-family);
+    }
+
+    body {
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img, svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: var(--transition);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Tipografías */
+    .title-catalog {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--primary);
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    .title-section {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+    }
+
+    .title-card {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .lead-text {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: var(--text-muted);
+      line-height: 1.6;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: var(--radius-full);
+      text-align: center;
+      transition: var(--transition);
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(216, 27, 96, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 6px 20px rgba(216, 27, 96, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      background-color: var(--primary-active);
+    }
+
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-cream);
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .btn-terracotta {
+      background-color: var(--terracotta);
+      color: #FFFFFF;
+    }
+
+    .btn-terracotta:hover {
+      background-color: var(--terracotta-dark);
+      transform: translateY(-2px);
+    }
+
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ==========================================================================
+       HEADER Y NAVEGACIÓN COMÚN (SECCIÓN 4)
+       ========================================================================== */
+    .top-announcement {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(216, 27, 96, 0.15);
+    }
+    .top-announcement a {
+      text-decoration: underline;
+      margin-left: 0.35rem;
+    }
+
+    .header-main {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-emblem {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--terracotta) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 4px 10px rgba(216, 27, 96, 0.25);
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--terracotta);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* 7 enlaces exactos requeridos de izquierda a derecha */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      position: relative;
+      padding: 0.4rem 0;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 0.5rem;
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+    }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 110px;
+      left: 0;
+      width: 100%;
+      background: #FFFFFF;
+      border-bottom: 2px solid var(--border);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 99;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-drawer.is-open {
+      display: flex;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .mobile-nav-link.active {
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       SECCIÓN 5: “NUESTROS DISEÑOS / KIT ESCOLAR” (REFERENCIA 2)
+       ========================================================================== */
+    .designs-section {
+      background-color: #FFFFFF;
+      padding-top: 3.5rem;
+      padding-bottom: 5.5rem;
+    }
+
+    .designs-header-wrap {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.25rem;
+      align-items: stretch;
+    }
+
+    .catalog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .catalog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .catalog-card.is-selected {
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 0 3px rgba(216, 27, 96, 0.2);
+    }
+
+    .selected-ribbon {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-sm);
+      display: none;
+      z-index: 5;
+    }
+
+    .catalog-card.is-selected .selected-ribbon {
+      display: block;
+    }
+
+    /* Contenedor de la fotografía / ilustración con object-fit: contain */
+    .product-img-wrapper {
+      position: relative;
+      background: linear-gradient(180deg, #FDFDFD 0%, #F5F1EC 100%);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 320px;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .product-img-svg {
+      width: 100%;
+      height: 100%;
+      max-height: 270px;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.12));
+      transition: transform 0.4s ease;
+    }
+
+    .catalog-card:hover .product-img-svg {
+      transform: scale(1.04);
+    }
+
+    .catalog-card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .product-name-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .product-description {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.75rem;
+      min-height: 68px;
+    }
+
+    .btn-donate-kit {
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      background-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-donate-kit:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 6px 18px rgba(216, 27, 96, 0.45);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       SECCIÓN 6: PLATAFORMA DE DONACIONES TRANSPARENTE
+       ========================================================================== */
+    .donations-section {
+      background-color: var(--bg-sand);
+      background: linear-gradient(145deg, #E5C18F 0%, #dbb27b 100%);
+      padding: 5.5rem 0;
+      position: relative;
+    }
+
+    .donations-section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .donations-section-header h2 {
+      font-size: clamp(2rem, 3.5vw, 2.7rem);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .donations-grid-two-areas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* Área Izquierda: Donación */
+    .donations-left-area {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .donation-card-box {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+
+    /* Banner de kit preseleccionado */
+    .selected-kit-banner {
+      background: var(--primary-light);
+      border: 1.5px dashed var(--primary);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 1.25rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      animation: fadeInBanner 0.3s ease-out;
+    }
+
+    @keyframes fadeInBanner {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .selected-kit-banner.is-active {
+      display: flex;
+    }
+
+    .selected-kit-info {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .selected-kit-info strong {
+      color: var(--primary);
+    }
+
+    .btn-clear-kit {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-decoration: underline;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .btn-clear-kit:hover {
+      color: var(--primary);
+    }
+
+    /* Selector de frecuencia */
+    .frequency-selector {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--bg-cream);
+      border-radius: var(--radius-full);
+      padding: 0.35rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .freq-btn {
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .freq-btn.active {
+      background: #FFFFFF;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Switch de Moneda */
+    .currency-switch-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .currency-switch-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .currency-switch-buttons {
+      display: inline-flex;
+      background: var(--bg-cream);
+      border-radius: var(--radius-sm);
+      padding: 0.15rem;
+      border: 1px solid var(--border);
+    }
+
+    .curr-btn {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    .curr-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Montos sugeridos */
+    .amounts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .amount-btn {
+      padding: 0.85rem 0.5rem;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .amount-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .amount-btn.active {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      color: var(--primary);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .custom-amount-wrap {
+      margin-bottom: 1.25rem;
+    }
+
+    .custom-input-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .currency-symbol {
+      position: absolute;
+      left: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-text {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.2rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      color: var(--text-main);
+      background: #FFFFFF;
+      transition: var(--transition);
+    }
+
+    .input-text:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(216, 27, 96, 0.15);
+    }
+
+    .impact-explanation-card {
+      background: var(--bg-cream);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+      border-left: 3px solid var(--terracotta);
+    }
+
+    .donor-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .input-control {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--text-main);
+      background: #FFFFFF;
+    }
+
+    .input-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* Área Derecha: Campañas de Recaudación y Métodos de Pago */
+    .donations-right-area {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .campaigns-card-box {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+
+    .campaign-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .campaign-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .campaign-name {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .campaign-stats {
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .progress-bar-track {
+      width: 100%;
+      height: 10px;
+      background: var(--border);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary) 0%, #ff4081 100%);
+      border-radius: var(--radius-full);
+      transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .campaign-subtext {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .payment-methods-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.25rem 0 0.5rem 0;
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .payment-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg-cream);
+      padding: 0.3rem 0.65rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    /* ==========================================================================
+       FOOTER OFICIAL (SECCIÓN 11)
+       ========================================================================== */
+    .footer-main {
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border);
+      padding: 5rem 0 2rem 0;
+      color: var(--text-main);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr 1.4fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      line-height: 1.45;
+    }
+
+    .contact-item .icon {
+      color: var(--primary);
+      margin-top: 0.15rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-top: 0.85rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.55;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg-cream);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Modal de donación exitosa */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(23, 23, 23, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 999;
+      padding: 1.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-backdrop.is-active {
+      display: flex;
+      animation: fadeInModal 0.25s ease-out;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-sheet {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 520px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .modal-body {
+      padding: 2.25rem;
+      text-align: center;
+    }
+
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .toast-message {
+      background: #171717;
+      color: #FFFFFF;
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-left: 4px solid var(--primary);
+      animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+
+    @keyframes toastIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsividad */
+    @media (max-width: 1024px) {
+      .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .donations-grid-two-areas {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu, .header-actions .btn-primary {
+        display: none;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .catalog-grid {
+        grid-template-columns: 1fr;
+      }
+      .amounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .donor-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de aviso superior -->
+  <aside class="top-announcement" aria-label="Aviso de causa social">
+    ✨ Cada morral artesanal cuenta con trazabilidad ética y apoya directamente a una madre cabeza de familia.
+    <a href="#donaciones">Conoce el impacto transparente &rarr;</a>
+  </aside>
+
+  <!-- ==========================================================================
+       HEADER Y NAVEGACIÓN (SECCIÓN 4)
+       ========================================================================== -->
+  <header class="header-main">
+    <div class="container header-content">
+      <!-- 1. Logotipo oficial a la izquierda -->
+      <a href="index.html" class="brand-logo" aria-label="Ir al inicio de Juntos hacemos País">
+        <div class="brand-emblem" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">Juntos hacemos País</span>
+          <span class="brand-subtitle">Madres Artesanas de Colombia</span>
+        </div>
+      </a>
+
+      <!-- 7 enlaces exactos de navegación requeridos -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="index.html#mision" class="nav-link">Nuestra Causa</a></li>
+          <li><a href="disenos.html" class="nav-link active" aria-current="page">Nuestros Diseños / Kit Escolar</a></li>
+          <li><a href="#donaciones" class="nav-link">Donar</a></li>
+          <li><a href="index.html#historias" class="nav-link">Historias de las Madres</a></li>
+          <li><a href="index.html#eventos" class="nav-link">Eventos</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón destacado Donar Ahora y Menú móvil -->
+      <div class="header-actions">
+        <a href="#donaciones" class="btn btn-primary">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+          <span>Donar Ahora</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú móvil colapsable -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html" class="mobile-nav-link" onclick="toggleMobileMenu()">Inicio</a>
+    <a href="index.html#mision" class="mobile-nav-link" onclick="toggleMobileMenu()">Nuestra Causa</a>
+    <a href="disenos.html" class="mobile-nav-link active" onclick="toggleMobileMenu()">Nuestros Diseños / Kit Escolar</a>
+    <a href="#donaciones" class="mobile-nav-link" onclick="toggleMobileMenu()">Donar</a>
+    <a href="index.html#historias" class="mobile-nav-link" onclick="toggleMobileMenu()">Historias de las Madres</a>
+    <a href="index.html#eventos" class="mobile-nav-link" onclick="toggleMobileMenu()">Eventos</a>
+    <div style="margin-top:1rem;">
+      <a href="#donaciones" class="btn btn-primary" style="width:100%;" onclick="toggleMobileMenu()">Donar Ahora</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         SECCIÓN 5: “NUESTROS DISEÑOS / KIT ESCOLAR” (REFERENCIA 2)
+         Inicia inmediatamente debajo del header, centrado, en fondo blanco.
+         ========================================================================== -->
+    <section class="designs-section" id="catalogo" aria-label="Catálogo de Diseños - Kit Escolar">
+      <div class="container">
+        
+        <!-- 5.1 Título de la sección -->
+        <div class="designs-header-wrap">
+          <h1 class="title-catalog">Conoce Nuestros Diseños - Kit Escolar</h1>
+          <p class="lead-text" style="margin-top: 0.75rem;">
+            Cada morral es confeccionado a mano por madres artesanas colombianas, transformando fibras naturales en oportunidades educativas para niñas y niños de nuestras comunidades.
+          </p>
+        </div>
+
+        <!-- 5.2 Catálogo de los 3 morrales en 3 columnas -->
+        <div class="catalog-grid">
+          
+          <!-- PRODUCTO 1: DISEÑO: VILLAVICENCIO -->
+          <article class="catalog-card" id="card-villavicencio">
+            <span class="selected-ribbon">✓ Kit Seleccionado</span>
+            
+            <div class="product-img-wrapper">
+              <!-- Ilustración vectorial auténtica y nítida del Morral Villavicencio -->
+              <svg class="product-img-svg" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Morral artesanal Diseño Villavicencio">
+                <defs>
+                  <linearGradient id="llanoGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#E76F51"/>
+                    <stop offset="60%" stop-color="#F4A261"/>
+                    <stop offset="100%" stop-color="#E9C46A"/>
+                  </linearGradient>
+                  <linearGradient id="bodyGradVilla" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#9A583A"/>
+                    <stop offset="50%" stop-color="#B26E4A"/>
+                    <stop offset="100%" stop-color="#80452A"/>
+                  </linearGradient>
+                  <filter id="shadowVilla" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.18"/>
+                  </filter>
+                </defs>
+                <!-- Asa superior -->
+                <path d="M125 50 C125 25, 195 25, 195 50" stroke="#5D301B" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <!-- Correas acolchadas -->
+                <path d="M95 90 C70 120, 65 240, 75 310" stroke="#753C22" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <path d="M225 90 C250 120, 255 240, 245 310" stroke="#753C22" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <!-- Cuerpo principal del morral -->
+                <path d="M85 85 C85 60, 235 60, 235 85 L250 280 C250 320, 70 320, 70 280 Z" fill="url(#bodyGradVilla)" filter="url(#shadowVilla)"/>
+                <!-- Tapa superior con costura artesanal -->
+                <path d="M80 85 C80 65, 240 65, 240 85 L245 160 C245 175, 75 175, 75 160 Z" fill="#753C22"/>
+                <!-- Inserto ilustrado: Sol y fauna de Villavicencio / Llanos -->
+                <rect x="95" y="100" width="130" height="55" rx="10" fill="url(#llanoGrad)"/>
+                <circle cx="160" cy="140" r="28" fill="#FFF275" opacity="0.9"/>
+                <!-- Garzas en vuelo sobre el llano -->
+                <path d="M125 118 Q132 114 138 118 Q144 114 150 118" stroke="#171717" stroke-width="2.2" fill="none"/>
+                <path d="M145 125 Q152 121 158 125 Q164 121 170 125" stroke="#171717" stroke-width="2.2" fill="none"/>
+                <path d="M102 145 C130 140, 190 140, 218 145" stroke="#D81B60" stroke-width="2.5" stroke-dasharray="4 3"/>
+                <!-- Bolsillo frontal con cremallera y herrajes -->
+                <rect x="90" y="195" width="140" height="95" rx="14" fill="#6A361F"/>
+                <line x1="105" y1="210" x2="215" y2="210" stroke="#E5E1DE" stroke-width="3" stroke-linecap="round"/>
+                <!-- Etiqueta distintiva Villavicencio -->
+                <rect x="110" y="235" width="100" height="26" rx="6" fill="#F8E8EE" stroke="#D81B60" stroke-width="1.5"/>
+                <text x="160" y="252" fill="#D81B60" font-size="10" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">VILLAVICENCIO</text>
+                <!-- Detalle llavero artesanal borla rosa -->
+                <circle cx="218" cy="210" r="5" fill="#E5C18F"/>
+                <path d="M218 215 L222 245 L214 245 Z" fill="#D81B60"/>
+              </svg>
+            </div>
+
+            <div class="catalog-card-body">
+              <h2 class="product-name-title">DISEÑO: VILLAVICENCIO</h2>
+              <p class="product-description">
+                Inspirado en los majestuosos atardeceres y la fauna silvestre de los Llanos Orientales. Combina loneta de alta resistencia con detalles de hilado tradicional y apliques ilustrados.
+              </p>
+              <button class="btn btn-donate-kit" onclick="selectKitForDonation('Diseño: Villavicencio', 'card-villavicencio')" aria-label="Donar para el kit escolar diseño Villavicencio">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>Donar para este Kit</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 2: DISEÑO: PEREIRA -->
+          <article class="catalog-card" id="card-pereira">
+            <span class="selected-ribbon">✓ Kit Seleccionado</span>
+
+            <div class="product-img-wrapper">
+              <!-- Ilustración vectorial auténtica y nítida del Morral Pereira -->
+              <svg class="product-img-svg" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Morral artesanal Diseño Pereira">
+                <defs>
+                  <linearGradient id="cafeGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2A9D8F"/>
+                    <stop offset="60%" stop-color="#407B64"/>
+                    <stop offset="100%" stop-color="#1B4D3E"/>
+                  </linearGradient>
+                  <linearGradient id="bodyGradPereira" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#7B4B32"/>
+                    <stop offset="50%" stop-color="#935A3D"/>
+                    <stop offset="100%" stop-color="#673C27"/>
+                  </linearGradient>
+                </defs>
+                <!-- Asa superior -->
+                <path d="M125 50 C125 25, 195 25, 195 50" stroke="#4A2616" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <!-- Correas acolchadas -->
+                <path d="M95 90 C70 120, 65 240, 75 310" stroke="#5E321E" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <path d="M225 90 C250 120, 255 240, 245 310" stroke="#5E321E" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <!-- Cuerpo principal del morral -->
+                <path d="M85 85 C85 60, 235 60, 235 85 L250 280 C250 320, 70 320, 70 280 Z" fill="url(#bodyGradPereira)" filter="url(#shadowVilla)"/>
+                <!-- Tapa superior con silueta cafetera -->
+                <path d="M80 85 C80 65, 240 65, 240 85 L245 160 C245 175, 75 175, 75 160 Z" fill="#5E321E"/>
+                <!-- Inserto ilustrado: Montañas del Eje Cafetero y granos de café -->
+                <rect x="95" y="100" width="130" height="55" rx="10" fill="url(#cafeGrad)"/>
+                <!-- Silueta de cordillera -->
+                <path d="M95 140 L120 120 L155 138 L190 115 L225 145 L225 155 L95 155 Z" fill="#1B4D3E" opacity="0.8"/>
+                <!-- Rama con cerezas de café rojas -->
+                <circle cx="145" cy="115" r="5" fill="#E63946"/>
+                <circle cx="154" cy="118" r="5" fill="#C1121F"/>
+                <circle cx="150" cy="125" r="5" fill="#E63946"/>
+                <path d="M138 120 Q148 114 162 122" stroke="#A7C957" stroke-width="2" fill="none"/>
+                <!-- Bolsillo frontal con acabado de fibra de fique -->
+                <rect x="90" y="195" width="140" height="95" rx="14" fill="#542B18"/>
+                <line x1="105" y1="210" x2="215" y2="210" stroke="#E5E1DE" stroke-width="3" stroke-linecap="round"/>
+                <!-- Textura de tejido artesanal -->
+                <path d="M100 230 L220 230 M100 245 L220 245" stroke="#A66A50" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <!-- Etiqueta distintiva Pereira -->
+                <rect x="110" y="252" width="100" height="24" rx="6" fill="#F8E8EE" stroke="#D81B60" stroke-width="1.5"/>
+                <text x="160" y="268" fill="#D81B60" font-size="10" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">PEREIRA</text>
+                <!-- Borla artesanal verde y fucsia -->
+                <circle cx="218" cy="210" r="5" fill="#E5C18F"/>
+                <path d="M218 215 L222 245 L214 245 Z" fill="#2A9D8F"/>
+              </svg>
+            </div>
+
+            <div class="catalog-card-body">
+              <h2 class="product-name-title">DISEÑO: PEREIRA</h2>
+              <p class="product-description">
+                Celebrando la riqueza del Paisaje Cultural Cafetero. Incorpora fibras de fique tejidas con tintes naturales de montaña y un compartimento reforzado para útiles escolares.
+              </p>
+              <button class="btn btn-donate-kit" onclick="selectKitForDonation('Diseño: Pereira', 'card-pereira')" aria-label="Donar para el kit escolar diseño Pereira">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>Donar para este Kit</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- PRODUCTO 3: DISEÑO: BUCARAMANGA -->
+          <article class="catalog-card" id="card-bucaramanga">
+            <span class="selected-ribbon">✓ Kit Seleccionado</span>
+
+            <div class="product-img-wrapper">
+              <!-- Ilustración vectorial auténtica y nítida del Morral Bucaramanga -->
+              <svg class="product-img-svg" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Morral artesanal Diseño Bucaramanga">
+                <defs>
+                  <linearGradient id="chicaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#E9C46A"/>
+                    <stop offset="60%" stop-color="#E76F51"/>
+                    <stop offset="100%" stop-color="#9A583A"/>
+                  </linearGradient>
+                  <linearGradient id="bodyGradBuca" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#495867"/>
+                    <stop offset="50%" stop-color="#5C6F84"/>
+                    <stop offset="100%" stop-color="#35404E"/>
+                  </linearGradient>
+                </defs>
+                <!-- Asa superior -->
+                <path d="M125 50 C125 25, 195 25, 195 50" stroke="#2B3540" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <!-- Correas acolchadas -->
+                <path d="M95 90 C70 120, 65 240, 75 310" stroke="#35404E" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <path d="M225 90 C250 120, 255 240, 245 310" stroke="#35404E" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <!-- Cuerpo principal del morral -->
+                <path d="M85 85 C85 60, 235 60, 235 85 L250 280 C250 320, 70 320, 70 280 Z" fill="url(#bodyGradBuca)" filter="url(#shadowVilla)"/>
+                <!-- Tapa superior azul profundo -->
+                <path d="M80 85 C80 65, 240 65, 240 85 L245 160 C245 175, 75 175, 75 160 Z" fill="#35404E"/>
+                <!-- Inserto ilustrado: Cañón del Chicamocha y ciudad de los parques -->
+                <rect x="95" y="100" width="130" height="55" rx="10" fill="url(#chicaGrad)"/>
+                <!-- Formaciones rocosas del Cañón -->
+                <path d="M95 155 L125 130 L145 142 L175 124 L205 138 L225 155 Z" fill="#753C22"/>
+                <path d="M135 145 L150 135 L170 150 L185 140 L200 155 Z" fill="#4A2616"/>
+                <!-- Bolsillo frontal con refuerzos artesanos -->
+                <rect x="90" y="195" width="140" height="95" rx="14" fill="#2B3540"/>
+                <line x1="105" y1="210" x2="215" y2="210" stroke="#E5E1DE" stroke-width="3" stroke-linecap="round"/>
+                <!-- Líneas geométricas santandereanas -->
+                <polygon points="120,230 130,242 110,242" fill="#E5C18F"/>
+                <polygon points="160,230 170,242 150,242" fill="#E5C18F"/>
+                <polygon points="200,230 210,242 190,242" fill="#E5C18F"/>
+                <!-- Etiqueta distintiva Bucaramanga -->
+                <rect x="110" y="252" width="100" height="24" rx="6" fill="#F8E8EE" stroke="#D81B60" stroke-width="1.5"/>
+                <text x="160" y="268" fill="#D81B60" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">BUCARAMANGA</text>
+                <!-- Borla artesanal fucsia -->
+                <circle cx="218" cy="210" r="5" fill="#E5C18F"/>
+                <path d="M218 215 L222 245 L214 245 Z" fill="#D81B60"/>
+              </svg>
+            </div>
+
+            <div class="catalog-card-body">
+              <h2 class="product-name-title">DISEÑO: BUCARAMANGA</h2>
+              <p class="product-description">
+                Inspirado en la Ciudad de los Parques y los relieves imponentes de Santander. Confección en lona gruesa con herrajes duraderos para soportar el ciclo escolar completo.
+              </p>
+              <button class="btn btn-donate-kit" onclick="selectKitForDonation('Diseño: Bucaramanga', 'card-bucaramanga')" aria-label="Donar para el kit escolar diseño Bucaramanga">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>Donar para este Kit</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECCIÓN 6: PLATAFORMA DE DONACIONES TRANSPARENTE (REFERENCIA 2)
+       Inicia inmediatamente después del catálogo, sobre fondo beige o arena.
+       ========================================================================== -->
+    <section class="donations-section" id="donaciones" aria-label="Plataforma de Donaciones Transparente">
+      <div class="container">
+        
+        <!-- 6.1 Fondo y encabezado centrado -->
+        <div class="donations-section-header">
+          <h2>Plataforma de Donaciones Transparente</h2>
+          <p class="lead-text" style="color:#333333;">
+            Tus aportes conectan de forma verificable con la compra de materias primas y la confección de kits escolares.
+          </p>
+        </div>
+
+        <!-- 6.2 Distribución del contenido en dos áreas principales -->
+        <div class="donations-grid-two-areas">
+          
+          <!-- ÁREA IZQUIERDA: Tarjeta de donación e ilustración -->
+          <div class="donations-left-area">
+            <div class="donation-card-box">
+              
+              <!-- Banner con kit escolar preseleccionado dinámicamente -->
+              <div class="selected-kit-banner" id="selectedKitBanner">
+                <div class="selected-kit-info">
+                  <span style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--text-muted); display:block;">Estás apoyando:</span>
+                  <strong>Kit Escolar — <span id="selectedKitName">Diseño: Villavicencio</span></strong>
+                </div>
+                <button type="button" class="btn-clear-kit" onclick="clearSelectedKit()">Quitar</button>
+              </div>
+
+              <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem;">
+                <!-- Ilustración mano sosteniendo corazón -->
+                <div style="width:48px; height:48px; border-radius:50%; background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg class="icon" style="width:1.6rem; height:1.6rem;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                </div>
+                <div>
+                  <h3 style="font-size:1.2rem; font-weight:800; color:var(--text-main);">Tu donación crea un impacto</h3>
+                  <p style="font-size:0.82rem; color:var(--text-muted);">Elige la frecuencia y el importe de tu contribución</p>
+                </div>
+              </div>
+
+              <!-- 6.3 Frecuencia de donación -->
+              <div class="frequency-selector" role="radiogroup" aria-label="Frecuencia de donación">
+                <button type="button" class="freq-btn active" id="btnFreqOnce" onclick="setFrequency('once')" role="radio" aria-checked="true">
+                  Donar una vez
+                </button>
+                <button type="button" class="freq-btn" id="btnFreqMonthly" onclick="setFrequency('monthly')" role="radio" aria-checked="false">
+                  Donar mensualmente ❤️
+                </button>
+              </div>
+
+              <!-- Switch de Moneda (USD / COP) -->
+              <div class="currency-switch-wrap">
+                <span class="currency-switch-label">Montos sugeridos:</span>
+                <div class="currency-switch-buttons">
+                  <button type="button" class="curr-btn active" id="currUsd" onclick="setCurrency('USD')">USD ($)</button>
+                  <button type="button" class="curr-btn" id="currCop" onclick="setCurrency('COP')">COP (Col$)</button>
+                </div>
+              </div>
+
+              <!-- 6.4 Montos sugeridos ($10, $25, $50, $100) -->
+              <div class="amounts-grid" id="amountsContainer">
+                <button type="button" class="amount-btn" onclick="selectAmount(10, this)" data-val="10">
+                  <span class="amount-num">$10</span>
+                </button>
+                <button type="button" class="amount-btn active" onclick="selectAmount(25, this)" data-val="25">
+                  <span class="amount-num">$25</span>
+                </button>
+                <button type="button" class="amount-btn" onclick="selectAmount(50, this)" data-val="50">
+                  <span class="amount-num">$50</span>
+                </button>
+                <button type="button" class="amount-btn" onclick="selectAmount(100, this)" data-val="100">
+                  <span class="amount-num">$100</span>
+                </button>
+              </div>
+
+              <!-- 6.5 Campo de donación personalizada -->
+              <div class="custom-amount-wrap">
+                <div class="custom-input-group">
+                  <span class="currency-symbol" id="currencySymbolLabel">$</span>
+                  <input type="number" id="customAmountInput" class="input-text" placeholder="Otro monto personalizado" min="1" step="any" oninput="handleCustomAmount(this.value)">
+                </div>
+              </div>
+
+              <!-- Texto de apoyo sobre el impacto -->
+              <div class="impact-explanation-card" id="impactExplanation">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span id="impactText">Con $25 USD aseguras hilos e insumos de confección para 1 kit escolar completo.</span>
+              </div>
+
+              <!-- Formulario del donante -->
+              <form id="donationForm" onsubmit="handleDonationSubmit(event)">
+                <div class="donor-info-grid">
+                  <div class="form-group">
+                    <label for="donorName">Nombre completo</label>
+                    <input type="text" id="donorName" class="input-control" placeholder="Ej. Camila Morales" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="donorEmail">Correo electrónico</label>
+                    <input type="email" id="donorEmail" class="input-control" placeholder="tu@correo.com" required>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; padding:0.95rem; font-size:1.05rem;">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                  <span id="btnSubmitDonationText">Donar $25 USD ahora</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- ÁREA DERECHA: Campañas de recaudación y métodos de pago -->
+          <div class="donations-right-area">
+            <div class="campaigns-card-box">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                <h3 style="font-size:1.15rem; font-weight:800; color:var(--text-main);">Campañas Activas de Recaudación</h3>
+                <span style="font-size:0.75rem; color:var(--primary); font-weight:700;">● Datos en tiempo real</span>
+              </div>
+
+              <!-- Campaña 1 -->
+              <div class="campaign-item" id="camp1">
+                <div class="campaign-header">
+                  <span class="campaign-name">1. Kit Escolar y Talleres: Llanos Orientales</span>
+                  <span class="campaign-stats" id="camp1-pct">82%</span>
+                </div>
+                <div class="progress-bar-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar-fill" id="camp1-fill" style="width: 82%;"></div>
+                </div>
+                <div class="campaign-subtext">
+                  <span id="camp1-raised">$12.300 USD recaudados</span>
+                  <span>Meta: $15.000 USD</span>
+                </div>
+              </div>
+
+              <!-- Campaña 2 -->
+              <div class="campaign-item" id="camp2">
+                <div class="campaign-header">
+                  <span class="campaign-name">2. Fique y Tradición: Comunidad Cafetera</span>
+                  <span class="campaign-stats" id="camp2-pct">68%</span>
+                </div>
+                <div class="progress-bar-track" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar-fill" id="camp2-fill" style="width: 68%;"></div>
+                </div>
+                <div class="campaign-subtext">
+                  <span id="camp2-raised">$6.800 USD recaudados</span>
+                  <span>Meta: $10.000 USD</span>
+                </div>
+              </div>
+
+              <!-- Campaña 3 -->
+              <div class="campaign-item" id="camp3">
+                <div class="campaign-header">
+                  <span class="campaign-name">3. Semillas de Santander: Morrales Duraderos</span>
+                  <span class="campaign-stats" id="camp3-pct">74%</span>
+                </div>
+                <div class="progress-bar-track" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar-fill" id="camp3-fill" style="width: 74%;"></div>
+                </div>
+                <div class="campaign-subtext">
+                  <span id="camp3-raised">$5.920 USD recaudados</span>
+                  <span>Meta: $8.000 USD</span>
+                </div>
+              </div>
+
+              <!-- 6.7 Métodos de pago habilitados -->
+              <div class="payment-methods-strip" aria-label="Métodos de pago habilitados">
+                <span class="payment-badge">💳 Tarjetas Visa / Master</span>
+                <span class="payment-badge">⚡ PSE Colombia</span>
+                <span class="payment-badge">📱 Nequi / Daviplata</span>
+                <span class="payment-badge">🔒 Certificado SSL 256-bit</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER OFICIAL EN 4 COLUMNAS (SECCIÓN 11)
+       ========================================================================== -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Columna 1 — Inicio -->
+        <div class="footer-col">
+          <h4>Inicio</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="disenos.html">Nuestros Diseños / Kits</a></li>
+            <li><a href="index.html#mision">Misión y Objetivos</a></li>
+            <li><a href="index.html#historias">Historias de Madres</a></li>
+            <li><a href="index.html#eventos">Agenda de Eventos</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 2 — Nuestra Causa -->
+        <div class="footer-col">
+          <h4>Nuestra Causa</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#mision">Empoderamiento Artesanal</a></li>
+            <li><a href="index.html#mision">Acceso a la Educación</a></li>
+            <li><a href="#donaciones">Donaciones Abiertas</a></li>
+            <li><a href="index.html#escanear-qr">Experiencia Escaneo QR</a></li>
+            <li><a href="#" onclick="alert('Informe de Transparencia y Rendición de Cuentas disponible en formato abierto.'); return false;">Rendición de Cuentas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3 — Contacto Info -->
+        <div class="footer-col">
+          <h4>Contacto Info</h4>
+          <div class="contact-item">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+57 (601) 555-0199</span>
+          </div>
+          <div class="contact-item">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>contacto@juntoshacemospais.org</span>
+          </div>
+          <div class="contact-item">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Calle 72 # 10-34, Bogotá D.C.</span>
+          </div>
+        </div>
+
+        <!-- Columna 4 — Marca -->
+        <div class="footer-col footer-brand">
+          <div class="brand-logo">
+            <div class="brand-emblem" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </div>
+            <div class="brand-text-wrap">
+              <span class="brand-title">Juntos hacemos País</span>
+              <span class="brand-subtitle">Tejiendo el futuro</span>
+            </div>
+          </div>
+          <p>
+            Iniciativa social colombiana que visibiliza a madres artesanas y garantiza educación e impacto sostenible a sus comunidades.
+          </p>
+          <div class="footer-social-links" aria-label="Redes sociales oficiales">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Barra inferior con año dinámico -->
+      <div class="footer-bottom">
+        <div>
+          © <span id="currentYear"></span> Juntos Hacemos País. NIT: 901.842.319-4. Organización social colombiana.
+        </div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="#" onclick="alert('Política de Privacidad conforme a la Ley 1581 de 2012.'); return false;">Protección de Datos</a>
+          <a href="#" onclick="alert('Términos y Condiciones de Uso.'); return false;">Términos</a>
+          <a href="#" onclick="alert('Línea Ética y de Transparencia disponible 24/7.'); return false;">Línea Ética</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de confirmación de donación -->
+  <div class="modal-backdrop" id="modalDonationSuccess" role="dialog" aria-modal="true">
+    <div class="modal-sheet">
+      <div class="modal-body">
+        <div style="width:68px; height:68px; background:var(--success-light); color:var(--success); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem auto;">
+          <svg class="icon" style="width:2.2rem; height:2.2rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <span class="badge-pill" style="background:var(--success-light); color:var(--success); margin-bottom:0.5rem;">Donación Registrada</span>
+        <h3 class="title-card" style="margin:0.5rem 0;">¡Muchas gracias por tu solidaridad!</h3>
+        <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;" id="successModalText">
+          Tu donación ha sido asignada para la confección del kit escolar.
+        </p>
+
+        <div style="background:var(--bg-cream); border:1px solid var(--border); border-radius:var(--radius-md); padding:1rem; text-align:left; font-size:0.85rem; margin-bottom:1.5rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+            <span style="color:var(--text-muted);">Monto aportado:</span>
+            <strong id="receiptAmount">$25 USD</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+            <span style="color:var(--text-muted);">Kit asignado:</span>
+            <strong id="receiptKit" style="color:var(--primary);">Diseño: Villavicencio</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+            <span style="color:var(--text-muted);">Donante:</span>
+            <strong id="receiptDonor">Camila Morales</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between;">
+            <span style="color:var(--text-muted);">Referencia auditoría:</span>
+            <strong id="receiptRef">KIT-89410</strong>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="closeDonationSuccessModal()" style="width:100%;">
+          Continuar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script>
+    /* ==========================================================================
+       LÓGICA JAVASCRIPT: DONACIONES, KITS Y NAVEGACIÓN
+       ========================================================================== */
+    let selectedKitName = null;
+    let currentCurrency = 'USD';
+    let currentFrequency = 'once';
+    let currentAmount = 25;
+
+    const CURRENCY_CONFIG = {
+      USD: {
+        symbol: '$',
+        amounts: [10, 25, 50, 100],
+        suffix: 'USD',
+        impactMap: {
+          10: 'Con $10 USD cubres un kit completo de agujas y materias primas iniciales.',
+          25: 'Con $25 USD aseguras hilos e insumos de confección para 1 kit escolar completo.',
+          50: 'Con $50 USD financias la entrega de un morral con todos sus útiles a un estudiante.',
+          100: 'Con $100 USD equipas a 2 estudiantes y apoyas a la madre artesana con capacitación.'
+        }
+      },
+      COP: {
+        symbol: 'Col$ ',
+        amounts: [40000, 100000, 200000, 400000],
+        suffix: 'COP',
+        impactMap: {
+          40000: 'Con $40.000 COP entregas materias primas para la confección del morral.',
+          100000: 'Con $100.000 COP financias la confección completa de 1 kit escolar artesanal.',
+          200000: 'Con $200.000 COP aseguras morral, cuadernos y refrigerios escolares por 1 mes.',
+          400000: 'Con $400.000 COP apadrinas 2 kits completos y acompañas a la familia tejedora.'
+        }
+      }
+    };
+
+    const campaignsData = {
+      camp1: { name: 'Kit Escolar: Llanos Orientales', raised: 12300, goal: 15000 }
+    };
+
+    // Selección de kit para donación
+    function selectKitForDonation(kitTitle, cardId) {
+      selectedKitName = kitTitle;
+
+      // Resaltar tarjeta seleccionada
+      document.querySelectorAll('.catalog-card').forEach(c => c.classList.remove('is-selected'));
+      const activeCard = document.getElementById(cardId);
+      if (activeCard) activeCard.classList.add('is-selected');
+
+      // Actualizar banner en el formulario de donaciones
+      const banner = document.getElementById('selectedKitBanner');
+      document.getElementById('selectedKitName').textContent = kitTitle;
+      banner.classList.add('is-active');
+
+      // Desplazamiento suave al módulo de donación
+      const donacionSection = document.getElementById('donaciones');
+      donacionSection.scrollIntoView({ behavior: 'smooth' });
+
+      updateDonationUI();
+      showToast(`¡Has seleccionado: ${kitTitle}!`);
+    }
+
+    function clearSelectedKit() {
+      selectedKitName = null;
+      document.querySelectorAll('.catalog-card').forEach(c => c.classList.remove('is-selected'));
+      document.getElementById('selectedKitBanner').classList.remove('is-active');
+      updateDonationUI();
+      showToast('Selección de kit restablecida a donación general.');
+    }
+
+    function setFrequency(freq) {
+      currentFrequency = freq;
+      document.getElementById('btnFreqOnce').classList.toggle('active', freq === 'once');
+      document.getElementById('btnFreqOnce').setAttribute('aria-checked', freq === 'once');
+      document.getElementById('btnFreqMonthly').classList.toggle('active', freq === 'monthly');
+      document.getElementById('btnFreqMonthly').setAttribute('aria-checked', freq === 'monthly');
+      updateDonationUI();
+    }
+
+    function setCurrency(curr) {
+      currentCurrency = curr;
+      document.getElementById('currUsd').classList.toggle('active', curr === 'USD');
+      document.getElementById('currCop').classList.toggle('active', curr === 'COP');
+      document.getElementById('currencySymbolLabel').textContent = CURRENCY_CONFIG[curr].symbol;
+
+      const container = document.getElementById('amountsContainer');
+      const amounts = CURRENCY_CONFIG[curr].amounts;
+      currentAmount = amounts[1];
+
+      container.innerHTML = amounts.map((amt, idx) => `
+        <button type="button" class="amount-btn ${idx === 1 ? 'active' : ''}" onclick="selectAmount(${amt}, this)" data-val="${amt}">
+          <span class="amount-num">${CURRENCY_CONFIG[curr].symbol}${amt.toLocaleString()}</span>
+        </button>
+      `).join('');
+
+      document.getElementById('customAmountInput').value = '';
+      updateDonationUI();
+    }
+
+    function selectAmount(val, btnElem) {
+      currentAmount = val;
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+      document.getElementById('customAmountInput').value = '';
+      updateDonationUI();
+    }
+
+    function handleCustomAmount(val) {
+      const num = parseFloat(val);
+      if (num && num > 0) {
+        currentAmount = num;
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      }
+      updateDonationUI();
+    }
+
+    function updateDonationUI() {
+      const config = CURRENCY_CONFIG[currentCurrency];
+      const freqText = currentFrequency === 'monthly' ? '/mes' : '';
+      const displayAmount = `${config.symbol}${currentAmount.toLocaleString()} ${config.suffix}${freqText}`;
+
+      const targetText = selectedKitName ? ` para ${selectedKitName}` : '';
+      document.getElementById('btnSubmitDonationText').textContent = `Donar ${displayAmount}${targetText}`;
+
+      const impactCard = document.getElementById('impactText');
+      if (selectedKitName) {
+        impactCard.innerHTML = `Tu donación de <strong>${displayAmount}</strong> apoyará directamente la fabricación y entrega del <strong>${selectedKitName}</strong>.`;
+      } else if (config.impactMap[currentAmount]) {
+        impactCard.textContent = config.impactMap[currentAmount];
+      } else {
+        impactCard.textContent = `Con tu aporte de ${displayAmount} respaldamos directamente el sustento digno y la educación en comunidades artesanas.`;
+      }
+    }
+
+    function handleDonationSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('donorName').value.trim();
+      const email = document.getElementById('donorEmail').value.trim();
+
+      if (!name || !email) {
+        showToast('Por favor completa tu nombre y correo.');
+        return;
+      }
+
+      // Actualizar campaña 1 en vivo
+      let addedUsd = currentCurrency === 'USD' ? currentAmount : Math.round(currentAmount / 4000);
+      campaignsData.camp1.raised += addedUsd;
+      let newPct = Math.min(100, Math.round((campaignsData.camp1.raised / campaignsData.camp1.goal) * 100));
+      document.getElementById('camp1-pct').textContent = `${newPct}%`;
+      document.getElementById('camp1-fill').style.width = `${newPct}%`;
+      document.getElementById('camp1-raised').textContent = `$${campaignsData.camp1.raised.toLocaleString()} USD recaudados`;
+
+      const config = CURRENCY_CONFIG[currentCurrency];
+      document.getElementById('receiptAmount').textContent = `${config.symbol}${currentAmount.toLocaleString()} ${config.suffix}`;
+      document.getElementById('receiptKit').textContent = selectedKitName || 'Fondo General de Kits Escolares';
+      document.getElementById('receiptDonor').textContent = name;
+      document.getElementById('receiptRef').textContent = 'KIT-' + Math.floor(10000 + Math.random() * 90000);
+
+      document.getElementById('modalDonationSuccess').classList.add('is-active');
+      showToast('¡Donación confirmada exitosamente!');
+    }
+
+    function closeDonationSuccessModal() {
+      document.getElementById('modalDonationSuccess').classList.remove('is-active');
+    }
+
+    function showToast(msg) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast-message';
+      toast.innerHTML = `
+        <svg class="icon" style="color:var(--primary);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <span>${msg}</span>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s ease';
+        setTimeout(() => toast.remove(), 400);
+      }, 3600);
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      const btn = document.getElementById('menuToggle');
+      const isOpen = drawer.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+
+    document.getElementById('menuToggle').addEventListener('click', toggleMobileMenu);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDonationSuccessModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      setCurrency('USD');
+    });
+  </script>
+</body>
+</html>
