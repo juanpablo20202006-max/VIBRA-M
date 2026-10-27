@@ -1,10 +1,13 @@
 {
   "name": "vibragroup",
   "version": "1.0.0",
+  "type": "module",
   "description": "Plataforma web de impacto social que apoya y visibiliza a madres artesanas y comunidades de Colombia (La Guajira, Bolívar, Antioquia y los Llanos Orientales). Combina historias de vida, donaciones transparentes en tiempo real, catálogo de kits escolares y trazabilidad mediante escaneo de códigos QR en cada morral.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 3005"
   },
   "repository": {
     "type": "git",
@@ -20,13 +23,22 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "framer-motion": "^14.7.1",
+    "gsap": "^3.15.0",
     "lucide-react": "^1.62.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "typescript": "^7.0.2"
+    "@vitejs/plugin-react": "^6.1.2",
+    "autoprefixer": "^10.6.2",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
   }
 }

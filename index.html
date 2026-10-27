@@ -244,10 +244,18 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
 
+    .header-main .container {
+      max-width: 1500px;
+      width: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
     .header-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1.25rem;
       height: 76px;
     }
 
@@ -255,6 +263,8 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .brand-emblem {
@@ -331,6 +341,7 @@
       display: flex;
       align-items: center;
       gap: 0.85rem;
+      flex-shrink: 0;
     }
 
     .menu-toggle {
@@ -474,6 +485,23 @@
     /* ==========================================================================
        SECCIÓN 5.2 "NUESTRA MISIÓN Y CÓMO AYUDAMOS"
        ========================================================================== */
+    .hero-section,
+    .mission-section,
+    .catalog-preview,
+    .donations-section,
+    .qr-section,
+    .stories-section,
+    .events-section,
+    .footer-main {
+      position: relative;
+      z-index: 2;
+    }
+
+    #cinematic-section-root {
+      position: relative;
+      z-index: 1;
+    }
+
     .mission-section {
       padding: 6rem 0;
       background-color: #FFFFFF;
@@ -1670,8 +1698,15 @@
       }
     }
 
+    @media (max-width: 992px) {
+      .desktop-nav,
+      #slide-tabs-nav-root,
+      .nav-menu {
+        display: none !important;
+      }
+    }
+
     @media (max-width: 768px) {
-      .nav-menu,
       .header-actions .btn-primary {
         display: none;
       }
@@ -1738,16 +1773,18 @@
         </div>
       </a>
 
-      <!-- Navegación de escritorio: 7 enlaces exactos requeridos de izquierda a derecha -->
-      <nav aria-label="Navegación principal">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link active">Inicio</a></li>
-          <li><a href="#mision" class="nav-link">Nuestra Causa</a></li>
-          <li><a href="disenos.html" class="nav-link">Nuestros Diseños / Kit Escolar</a></li>
-          <li><a href="#donaciones" class="nav-link">Donar</a></li>
-          <li><a href="#historias" class="nav-link">Historias de las Madres</a></li>
-          <li><a href="#eventos" class="nav-link">Eventos</a></li>
-        </ul>
+      <!-- Navegación de escritorio: Con SlideTabs Animado con Framer Motion -->
+      <nav aria-label="Navegación principal" class="desktop-nav">
+        <div id="slide-tabs-nav-root">
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Inicio</a></li>
+            <li><a href="#mision" class="nav-link">Nuestra Causa</a></li>
+            <li><a href="disenos.html" class="nav-link">Nuestros Diseños / Kit Escolar</a></li>
+            <li><a href="#donaciones" class="nav-link">Donar</a></li>
+            <li><a href="#historias" class="nav-link">Historias de las Madres</a></li>
+            <li><a href="#eventos" class="nav-link">Eventos</a></li>
+          </ul>
+        </div>
       </nav>
 
       <!-- Acciones de cabecera -->
@@ -1837,6 +1874,9 @@
         </div>
       </div>
     </section>
+
+    <!-- Transición Cinemática Interactiva con Telón GSAP ScrollTrigger (Ubicada justo después del Hero) -->
+    <div id="cinematic-section-root"></div>
 
     <!-- ==========================================================================
          SECCIÓN 5.2: NUESTRA MISIÓN Y CÓMO AYUDAMOS
@@ -3068,5 +3108,7 @@
       setCurrency('USD');
     });
   </script>
+  <!-- React + SlideTabs & Tailwind Integration -->
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
